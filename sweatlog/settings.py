@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'sweatlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'catcollector',
+        'NAME': 'sweatlog',
         'USER': env('DB_USER'),
         'PASSWORD': env('DB_PW'),
         'HOST': env('HOST')
