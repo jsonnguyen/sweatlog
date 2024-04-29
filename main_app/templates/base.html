@@ -20,7 +20,7 @@
                 </ul>
                 <ul class="right">
                   {% if user.is_authenticated %}
-                    <li></li>
+                    <li><a href="{% url "index" %}">View Workouts</a></li>
                     <li>
                         <form action="{% url 'logout' %}" method="POST">
                             {% csrf_token %}

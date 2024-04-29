@@ -1,36 +1,31 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-MUSCLE_GROUP = (
-    ('CH', 'Chest'),
-    ('SH', 'Shoulder'),
-    ('UB', 'Upper Back'),
-    ('LB', 'Lower Back'),
-    ('LE', 'Legs'),
-    ('CA', 'Calf'),
-    ('BI', 'Biceps'),
-    ('TR' ,'Triceps'),
-    ('AB', 'Abs')
-)
+
 # Create your models here.
+
+class MuscleGroup(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class ExerciseType(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    muscle_group = models.CharField(choices = MUSCLE_GROUP)
+    muscle_groups = models.ManyToManyField(MuscleGroup)
     
     def __str__(self):
         return self.name
 
 class Exercise(models.Model):
-    name = models.CharField(max_length=100)
+    exercise_type = models.ForeignKey(ExerciseType, on_delete=models.CASCADE)
     sets = models.IntegerField()
     reps = models.IntegerField()
     weight = models.DecimalField(max_digits=6, decimal_places=2)
-    exercise_type = models.ForeignKey(ExerciseType, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.name} {self.sets} x {self.reps}'
+        return f'{self.exercise_type.name} {self.sets} x {self.reps}'
 
 class Workout(models.Model):
     name = models.CharField(max_length=250)
