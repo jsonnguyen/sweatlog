@@ -43,3 +43,11 @@ class WorkoutCreate(LoginRequiredMixin, CreateView):
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
+  
+class WorkoutUpdate(LoginRequiredMixin, UpdateView):
+  model = Workout
+  fields = ['name', 'date', 'notes']
+
+class WorkoutDelete(LoginRequiredMixin, DeleteView):
+  model = Workout
+  success_url ='/workouts'
