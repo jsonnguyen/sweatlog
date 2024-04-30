@@ -4,16 +4,16 @@ body {
     flex-direction: column;
   }
   
-  main {
+main {
     flex: 1 0 auto;
   }
   
-  footer.page-footer {
+footer.page-footer {
     padding-top: 0;
     text-align: right;
   }
   
-  #logout-button {
+#logout-button {
     border: none;
     background: none;
     color: inherit;
@@ -23,3 +23,7 @@ body {
     font-size: inherit; /* Use the same font size as the surrounding text */
   }
   
+.notes {
+    width: 100%; /* Set the width to 100% */
+    word-wrap: break-word; /* Enable word wrapping */
+}
