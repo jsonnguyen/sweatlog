@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Workout
+from .forms import ExerciseForm
 # Create your views here.
 
 def home(request):
@@ -26,8 +27,10 @@ def signup(request):
 
 def workout_detail(request, workout_id):
   workout = Workout.objects.get(id=workout_id)
+  exercise_form = ExerciseForm()
   return render(request, 'workouts/detail.html', {
-    'workout': workout
+    'workout': workout,
+    'exercise_form': exercise_form
   })
 
 class WorkoutList(LoginRequiredMixin, ListView):
