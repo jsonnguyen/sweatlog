@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Workout
 # Create your views here.
@@ -31,3 +32,11 @@ def workout_detail(request, workout_id):
 
 class WorkoutList(LoginRequiredMixin, ListView):
   model = Workout
+
+class WorkoutCreate(LoginRequiredMixin, CreateView):
+  model = Workout
+  fields = ['name', 'date', 'notes']
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)

@@ -20,6 +20,7 @@
                 </ul>
                 <ul class="right">
                   {% if user.is_authenticated %}
+                    <li><a href="{% url "workout_create" %}">Add Workout</a></li>
                     <li><a href="{% url "index" %}">View Workouts</a></li>
                     <li>
                         <form action="{% url 'logout' %}" method="POST">
@@ -40,7 +41,7 @@
         {% endblock %}
     </main>
   	<footer class="blue page-footer">
-       <div class="right">All Rights Reserved, &copy; 2022 Cat Collector &nbsp;</div>
+       <div class="right">All Rights Reserved, &copy; 2022 SweatLog &nbsp;</div>
     </footer>
 </body>
 </html>
