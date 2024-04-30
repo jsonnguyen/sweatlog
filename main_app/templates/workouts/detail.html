@@ -22,9 +22,8 @@
 
 <div class="row">
     <div class="col s12">
-        <form action="" method="POST">
+        <form action="{% url "add_exercise" workout.id %}" method="POST">
             {% csrf_token %}
-            <!-- Render the inputs -->
             {{ exercise_form.as_p }}
             <input type="submit" class="btn" value="Add Execercise">
         </form>
@@ -39,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for exercise in workout.exercises.all %}
+                {% for exercise in workout.exercise_set.all %}
                 <tr>
                     <td>{{exercise.exercise_type.name}}</td>
                     <td>{{exercise.sets}}</td>

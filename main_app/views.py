@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from .models import Workout
 from .forms import ExerciseForm
 # Create your views here.
@@ -32,6 +33,16 @@ def workout_detail(request, workout_id):
     'workout': workout,
     'exercise_form': exercise_form
   })
+
+@login_required
+def add_exercise(request, workout_id):
+  form = ExerciseForm(request.POST)
+  if form.is_valid():
+    new_exercise = form.save(commit=False)
+    new_exercise.workout_id = workout_id
+    new_exercise.save()
+
+  return redirect('detail', workout_id=workout_id)
 
 class WorkoutList(LoginRequiredMixin, ListView):
   model = Workout
