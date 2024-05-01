@@ -13,7 +13,10 @@
             {{ muscle.name }}{% if not forloop.last %}, {% endif %}
         {% endfor %}
       </div>
-    
+      <div class="card-action">
+        <a href="{% url 'exercise_update' exercise_type.id %}">Edit</a>
+        <a href="{% url 'exercise_delete' exercise_type.id %}">Delete</a>
+      </div>
     </div>
   </div>
 </div>

@@ -82,7 +82,15 @@ class WorkoutDelete(LoginRequiredMixin, DeleteView):
 class ExerciseTypeList(ListView):
   model = ExerciseType
 
-class ExerciseTypeCreate(CreateView):
+class ExerciseTypeCreate(LoginRequiredMixin, CreateView):
   model = ExerciseType
   fields = '__all__'
+
+class ExerciseTypeUpdate(LoginRequiredMixin, UpdateView):
+  model = ExerciseType
+  fields = '__all__'
+
+class ExerciseTypeDelete(LoginRequiredMixin, DeleteView):
+  model = ExerciseType
+  success_url = '/exercises'
 
