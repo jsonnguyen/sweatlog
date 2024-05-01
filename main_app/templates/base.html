@@ -21,6 +21,7 @@
                 <ul class="right">
                   {% if user.is_authenticated %}
                     <li><a href="{% url "exercise_index" %}">View Exercises</a></li>
+                    <li><a href="{% url "exercise_create" %}">Add Exercises</a></li>
                     <li><a href="{% url "workout_create" %}">Add Workout</a></li>
                     <li><a href="{% url "index" %}">View Workouts</a></li>
                     <li>

@@ -18,6 +18,9 @@ class ExerciseType(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("exercise_detail", kwargs={"exercise_type_id": self.id})
 
 
 class Workout(models.Model):

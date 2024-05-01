@@ -8,7 +8,10 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">{{ exercise_type.name }}</span>
-        <p>Muscles Worked: {{ exercise_type.muscle_groups.name }}</p>
+        <p>Muscles Worked: </p>
+        {% for muscle in exercise_type.muscle_groups.all %}
+            {{ muscle.name }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
       </div>
     
     </div>

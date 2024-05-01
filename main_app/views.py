@@ -82,5 +82,7 @@ class WorkoutDelete(LoginRequiredMixin, DeleteView):
 class ExerciseTypeList(ListView):
   model = ExerciseType
 
-# class ExerciseTypeDetail(DetailView):
-#     model = Exercise
+class ExerciseTypeCreate(CreateView):
+  model = ExerciseType
+  fields = '__all__'
+
