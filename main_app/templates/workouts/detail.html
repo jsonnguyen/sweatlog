@@ -35,6 +35,7 @@
                     <th>Sets</th>
                     <th>Reps</th>
                     <th>Weight</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -44,6 +45,12 @@
                     <td>{{exercise.sets}}</td>
                     <td>{{exercise.reps}}</td>
                     <td>{{exercise.weight}}</td>
+                    <td>
+                        <form action="{% url "delete_exercise" workout.id exercise.id %}" method="POST">
+                            {% csrf_token %}
+                            <button>DELETE</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
