@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .models import Workout, Exercise
+from .models import Workout, Exercise, ExerciseType
 from .forms import ExerciseForm
 # Create your views here.
 
@@ -26,12 +26,20 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
+@login_required
 def workout_detail(request, workout_id):
   workout = Workout.objects.get(id=workout_id)
   exercise_form = ExerciseForm()
   return render(request, 'workouts/detail.html', {
     'workout': workout,
     'exercise_form': exercise_form
+  })
+
+def exercise_type_detail(request, exercise_type_id):
+  exercise_type = ExerciseType.objects.get(id=exercise_type_id)
+  print(exercise_type)
+  return render(request, 'main_app/exercisetype_detail.html', {
+    'exercise_type': exercise_type
   })
 
 @login_required
@@ -44,6 +52,7 @@ def add_exercise(request, workout_id):
 
   return redirect('detail', workout_id=workout_id)
 
+@login_required
 def delete_exercise(request, workout_id, exercise_id):
     exercise = Exercise.objects.get(id=exercise_id)
     print(exercise)
@@ -69,3 +78,9 @@ class WorkoutUpdate(LoginRequiredMixin, UpdateView):
 class WorkoutDelete(LoginRequiredMixin, DeleteView):
   model = Workout
   success_url ='/workouts'
+
+class ExerciseTypeList(ListView):
+  model = ExerciseType
+
+# class ExerciseTypeDetail(DetailView):
+#     model = Exercise
