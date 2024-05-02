@@ -32,3 +32,27 @@ footer.page-footer {
 #home {
   text-align: center;
 }
+
+
+
+.datepicker-date-display {
+  background-color: #2196F3 !important;
+}
+
+.datepicker-content .selected {
+  background-color: #1976D2 !important;
+}
+
+.datepicker-cancel {
+  color: #1976D2;
+}
+
+.datepicker-done {
+  color: #1976D2;
+}
+
+
+.is-selected .datepicker-day-button{
+  background-color: #1976D2;
+}
+
