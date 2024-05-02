@@ -63,6 +63,9 @@ def delete_exercise(request, workout_id, exercise_id):
 class WorkoutList(LoginRequiredMixin, ListView):
   model = Workout
 
+  def get_queryset(self):
+    return Workout.objects.filter(user=self.request.user)
+  
 class WorkoutCreate(LoginRequiredMixin, CreateView):
   model = Workout
   fields = ['name', 'date', 'notes']
