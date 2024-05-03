@@ -4,7 +4,7 @@ Sweat Log is your ultimate companion on your fitness journey, designed to help y
 Features:
 
 - Track Workouts: Log your workouts with ease, including details like exercise type, sets, reps, and weight lifted.
-- Personalized Experience: Customize your workout routines and exercises to suit your unique fitness needs and      preferences.
+- Personalized Experience: Customize your workout routines and exercises to suit your unique fitness needs and preferences.
 - Visual Progress: Visualize your progress over time with interactive charts and graphs, helping you stay motivated and focused on your goals.
 - Muscle Group Highlighting: Easily identify which muscle groups you've targeted in each workout, ensuring balanced and effective training.
 - User-Friendly Interface: Enjoy a seamless and intuitive user experience, making it effortless to navigate and use the app.
@@ -24,7 +24,7 @@ Features:
 
 # Getting Started
 
-[Click to View Project Planning](https://trello.com/b/jm4A5V6g/bookie)
+[Click to View Project Planning](https://trello.com/b/t3fbbwAX/sweatlog)
 [Click to use Bookview](https://sweatlog-f4ca50361025.herokuapp.com/)
 
 # Next Steps
