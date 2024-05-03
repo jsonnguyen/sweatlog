@@ -25,7 +25,7 @@ Features:
 # Getting Started
 
 [Click to View Project Planning](https://trello.com/b/t3fbbwAX/sweatlog)
-[Click to use Bookview](https://sweatlog-f4ca50361025.herokuapp.com/)
+[Click to use SweatLog](https://sweatlog-f4ca50361025.herokuapp.com/)
 
 # Next Steps
 
