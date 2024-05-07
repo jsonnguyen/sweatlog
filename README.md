@@ -1,4 +1,4 @@
-# Bookview
+# SweatLog
 Sweat Log is your ultimate companion on your fitness journey, designed to help you track your workouts, stay motivated, and achieve your fitness goals. Whether you're a seasoned athlete or just starting out, Sweat Log provides you with the tools you need to take your workouts to the next level.
 
 Features:
